@@ -1,1 +1,0 @@
-module.exports={"dependencies":{},"ultimitreniurl":"http://chiamatreno.tper.it/cgi-bin/prossimiTreni?codiceStazione=","poiurl":"http://app.cartsc.eu/poi.api.test/","poistazionitrenovicino":"stazionitreno","poistazionitrenolista":"stazionitrenobound","elencotreni":"prossimiTreni"};
