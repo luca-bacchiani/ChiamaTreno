@@ -1,0 +1,123 @@
+<Alloy>
+	<TabGroup>
+		<Tab title="Stazione vicino" icon="/images/tabview/KS_nav_views.png">
+			<Window title="Stazione vicino">
+				<View class="header">
+					<View class="toolbar">
+						<Button id="aggiornaposizione"></Button>
+					</View>
+					<View class="toolbar"  id="stazionevicinatool">
+						<Label id="lblstazionevicina" class="labelinfo" />
+						<Button id="richiedimappavicina" ></Button>
+					</View>
+				</View>
+				<View class="contentarea">
+					<View id="viewstazionevicina" class="subcontentarea">
+						<TableView id="listatrenistazionevicina" class="elencotreni" />
+					</View>
+					<ActivityIndicator id="actindstazionevicina" class="actind" />
+				</View>
+				<View class="footer" id="footervicina">
+					<ImageView id="r4s_img_vicina" image="/images/footer/r4s_logo.jpg" />
+					<ImageView id="see_img_vicina" image="/images/footer/see_logo.jpg" />
+					<ImageView id="eu_img_vicina" image="/images/footer/eu_logo.jpg" />
+					<ImageView id="tper_img_vicina" image="/images/footer/tper_logo.jpg" />
+				</View>
+			</Window>
+		</Tab>
+		<Tab title="Elenco stazioni" icon="/images/tabview/KS_nav_ui.png" id="stazionitab">
+			<Window title="Elenco stazioni">
+				<View class="header">
+					<View class="toolbar">
+						<Button id="aggiornaelenco"></Button>
+						<Button id="preferiti"></Button>
+					</View>
+					<!-- Luca 13/11/2014 -->
+					<View class="toolbar">
+						<!-- <Button onClick="showLocation" id="richiedimappa" lat="41.41304" lng="14.46691"></Button> -->
+						<Label id="lblelencostazioni" class="labelinfo" />
+						<Button id="richiedimappa" ></Button>
+					</View>
+				</View>
+				<View class="contentarea">
+					<View id="viewelencostazioni" class="subcontentarea">
+						<SearchBar id="searchelencostazioni" />
+						<TableView id="listastazionielencostazioni" class="elencostazioni" />
+					</View>
+					<View id="viewtrenielencostazioni" class="subcontentarea">
+						<TableView id="listatrenielencostazioni" class="elencotreni" />
+					</View>
+					<ActivityIndicator id="actindelencostazioni" class="actind" />
+				</View>
+				<View class="footer" id="footerstazelenco">
+					<ImageView id="r4s_img" image="/images/footer/r4s_logo.jpg" />
+					<ImageView id="see_img" image="/images/footer/see_logo.jpg" />
+					<ImageView id="eu_img" image="/images/footer/eu_logo.jpg" />
+					<ImageView id="tper_img" image="/images/footer/tper_logo.jpg" />
+				</View>
+			</Window>
+		</Tab>
+		<Tab title="Preferiti" icon="/images/tabview/KS_nav_pref.png" id="preftab">
+			<Window title="Elenco stazioni">
+				<View class="header">
+					<View class="toolbar">
+						<Button id="aggiornaelencopref"></Button>
+						<Button id="preferitipref"></Button>
+					</View>
+					<!-- Luca 13/11/2014 -->
+					<View class="toolbar">
+						<!-- <Button onClick="showLocation" id="richiedimappapref" lat="41.41304" lng="14.46691"></Button> -->
+						<Label id="lblelencostazionipref" class="labelinfo" />
+						<Button id="richiedimappapref" ></Button>
+					</View>
+				</View>
+				<View class="contentarea">
+					<View id="viewelencostazionipref" class="subcontentarea">
+						<TableView id="listastazionielencostazionipref" class="elencostazioni" />
+					</View>
+					<View id="viewtrenielencostazionipref" class="subcontentarea">
+						<TableView id="listatrenielencostazionipref" class="elencotreni" />
+					</View>
+					<ActivityIndicator id="actindelencostazionipref" class="actind" />
+				</View>
+				<View class="footer" id="footerpref">
+					<ImageView id="r4s_img_pref" image="/images/footer/r4s_logo.jpg" />
+					<ImageView id="see_img_pref" image="/images/footer/see_logo.jpg" />
+					<ImageView id="eu_img_pref" image="/images/footer/eu_logo.jpg" />
+					<ImageView id="tper_img_pref" image="/images/footer/tper_logo.jpg" />
+				</View>
+			</Window>
+		</Tab>
+		
+		<!-- Luca 13/11/2014
+		<Tab title="Test Map Intent" id="testtab">
+			<Window >
+				<TableView>
+					<TableViewRow>
+						<Button class="showLocation" onClick="showLocation" id="Campobasso" lat="41.41304" lon="14.46691">Campobasso</Button>
+					</TableViewRow>
+					<TableViewRow>
+						<Button class="showLocation" onClick="showLocation" id="Bologna" lat="44.4944456" lon="11.3492311">Bologna</Button>
+					</TableViewRow>
+					<TableViewRow>
+						<Button class="showLocation" onClick="showLocation" id="Pesaro" lat="43.9120690" lon="12.9157440">Pesaro</Button>
+					</TableViewRow>
+					<TableViewRow>
+						<Button class="showLocation" onClick="showLocation" id="nocoords">Nessuna coordinata</Button>
+					</TableViewRow>
+					<TableViewRow>
+						<Button class="showLocation" onClick="showLocation" id="latonly" lat="43.9120690">Solo latitudine</Button>
+					</TableViewRow>
+					<TableViewRow>
+						<Button class="showLocation" onClick="showLocation" id="lononly" lon="14.46691">Solo longitudine</Button>
+					</TableViewRow>
+					<TableViewRow>
+						<Button class="showLocation" onClick="showLocation" id="wrongcoords" lat="sdg" lon="srg">Coordinate non valide</Button>
+					</TableViewRow>
+				</TableView>
+			</Window>
+		</Tab>
+		-->
+		
+	</TabGroup>
+</Alloy>

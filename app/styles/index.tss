@@ -1,0 +1,140 @@
+"TabGroup": {
+	navBarHidden: true,
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL
+},
+"Window": {
+	backgroundColor: "#fff"
+},
+"Label": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	color: "#FFF",
+	font: {
+		fontSize: '12sp',
+		fontWeight: 'bold'
+	},
+	textAlign: 'left'
+},
+".header": {
+	top: 0,
+	height: '90dp',
+	backgroundColor: '#cd3838',
+	layout: 'vertical'
+},
+".footer": {
+	bottom: 0,
+	height: '90dp',
+	backgroundColor: '#FFF',
+	layout: 'horizontal',
+	borderColor: '#cd3838',
+	borderWidth: '3dp'
+},
+".toolbar": {
+	height: Ti.UI.SIZE,
+	layout: 'horizontal'
+},
+".toolbar[platform=ios]": {
+	left: 5
+},
+".contentarea": {
+	top: '90dp'
+},
+".actind": {
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE,
+	color: 'black'
+},
+".subcontentarea": {
+	layout: 'vertical'
+},
+"#aggiornaposizione": {
+	title: 'Aggiorna posizione',
+	left: 0,
+	top: 5
+},
+"#aggiornaelenco": {
+	title: 'Aggiorna elenco',
+	left: 0,
+	top: 5
+},
+"#aggiornaelencopref": {
+	title: 'Aggiorna elenco',
+	left: 0,
+	top: 5,
+	visible: false
+},
+"#preferiti": {
+	backgroundColor: 'transparent',
+	backgroundImage: 'none',
+	image: '/images/toolbar/nopref.png',
+	left: 10,
+	top: 5,
+	visible: false
+},
+"#preferitipref": {
+	backgroundColor: 'transparent',
+	backgroundImage: 'none',
+	image: '/images/toolbar/nopref.png',
+	left: 10,
+	top: 5,
+	visible: false
+},
+".labelinfo": {
+	left: 5,
+	right: 5
+},
+".elencotreni": {
+	top: 20,
+	allowsSelection: false
+},
+"#lblelencostazioni": {
+	text: 'Seleziona una stazione di partenza dall\'elenco'
+},
+"#lblelencostazionipref": {
+	text: 'Seleziona una stazione di partenza dall\'elenco'
+},
+"#lblstazionevicina": {
+	text: 'Ricerca posizione in corso...'
+},
+"#viewtrenielencostazioni": {
+	visible: false
+},
+"#viewtrenielencostazionipref": {
+	visible: false
+},
+"#searchelencostazioni": {
+	barColor: '#000',
+	top: 0,
+	showCancel: 'false',
+	hintText: 'Cerca...'
+},
+"#actindstazionevicina[platform=ios]": {
+	style: Titanium.UI.iPhone.ActivityIndicatorStyle.DARK
+},
+"#actindelencostazioni[platform=ios]": {
+	style: Titanium.UI.iPhone.ActivityIndicatorStyle.DARK
+},
+"#actindelencostazionipref[platform=ios]": {
+	style: Titanium.UI.iPhone.ActivityIndicatorStyle.DARK
+},
+
+// Luca 13/11/2014
+"#richiedimappa": {
+	visible: false,
+	backgroundColor: 'transparent',
+	backgroundImage: 'none',
+	image: '/images/toolbar/maps.png'
+},
+"#richiedimappapref": {
+	visible: false,
+	backgroundColor: 'transparent',
+	backgroundImage: 'none',
+	image: '/images/toolbar/maps.png'
+},
+"#richiedimappavicina": {
+	visible: false,
+	backgroundColor: 'transparent',
+	backgroundImage: 'none',
+	image: '/images/toolbar/maps.png'
+}

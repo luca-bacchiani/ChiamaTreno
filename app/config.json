@@ -1,0 +1,15 @@
+{
+	"global": {
+		"ultimitreniurl": "http://chiamatreno.tper.it/cgi-bin/prossimiTreni?codiceStazione=",
+		"poiurl": "http://app.cartsc.eu/poi.api.test/",
+		"poistazionitrenovicino": "stazionitreno",
+		"poistazionitrenolista": "stazionitrenobound",
+		"elencotreni": "prossimiTreni"
+	}, 
+	"env:development": {}, 
+	"env:test": {}, 
+	"env:production": {}, 
+	"os:ios": {}, 
+	"os:android": {}, 
+	"dependencies": {}
+}

@@ -1,0 +1,8 @@
+"/media/cart38_old/home/administrator/Titanium_Studio_Workspace/eu.cartsc.app.treni/build/android/gen/android/support/v7/appcompat/R.java"
+"/media/cart38_old/home/administrator/Titanium_Studio_Workspace/eu.cartsc.app.treni/build/android/gen/eu/cartsc/app/treni/ApplicationStylesheet.java"
+"/media/cart38_old/home/administrator/Titanium_Studio_Workspace/eu.cartsc.app.treni/build/android/gen/eu/cartsc/app/treni/AssetCryptImpl.java"
+"/media/cart38_old/home/administrator/Titanium_Studio_Workspace/eu.cartsc.app.treni/build/android/gen/eu/cartsc/app/treni/ChiamatrenoActivity.java"
+"/media/cart38_old/home/administrator/Titanium_Studio_Workspace/eu.cartsc.app.treni/build/android/gen/eu/cartsc/app/treni/ChiamatrenoAppInfo.java"
+"/media/cart38_old/home/administrator/Titanium_Studio_Workspace/eu.cartsc.app.treni/build/android/gen/eu/cartsc/app/treni/ChiamatrenoApplication.java"
+"/media/cart38_old/home/administrator/Titanium_Studio_Workspace/eu.cartsc.app.treni/build/android/gen/eu/cartsc/app/treni/R.java"
+"/media/cart38_old/home/administrator/Titanium_Studio_Workspace/eu.cartsc.app.treni/build/android/gen/ti/modules/titanium/ui/R.java"
