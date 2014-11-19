@@ -1,7 +1,5 @@
 "TabGroup": {
-	navBarHidden: true,
-	width: Ti.UI.FILL,
-	height: Ti.UI.FILL
+	navBarHidden: true
 },
 "Window": {
 	backgroundColor: "#fff"
@@ -21,14 +19,6 @@
 	height: '90dp',
 	backgroundColor: '#cd3838',
 	layout: 'vertical'
-},
-".footer": {
-	bottom: 0,
-	height: '90dp',
-	backgroundColor: '#FFF',
-	layout: 'horizontal',
-	borderColor: '#cd3838',
-	borderWidth: '3dp'
 },
 ".toolbar": {
 	height: Ti.UI.SIZE,

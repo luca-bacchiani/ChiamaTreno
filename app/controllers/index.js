@@ -25,6 +25,8 @@ function showLocation(e) {
     Ti.Android.currentActivity.startActivity(intent);
 };
 var requestMap = function() {
+	if (!OS_ANDROID)
+		return;
 	if (isNaN(latitude) || isNaN(longitude)) {
 		alert('coordinate non valide');
 		return;
@@ -196,7 +198,9 @@ var createTreniRow = function(item) {
  * */
 var locationHandler = function(e) {
 	
-	$.richiedimappavicina.hide(); // Luca 14//11/2014
+	// Luca 14//11/2014
+	if (OS_ANDROID)
+		$.richiedimappavicina.hide();
 	
 	if (e.success && e.coords != null) {
 		//salviamo le informazioni di lng/lat del punto in cui ci troviamo
@@ -240,11 +244,13 @@ var locationHandler = function(e) {
 				$.lblstazionevicina.text = 'Stazione di: ' + recorded.text + ' ' + Alloy.Globals.formatDistanceToLabel(dist);
 				
 				// Luca 14/11/2014
-				$.richiedimappavicina.removeEventListener('click', requestMap);
-				latitude = recorded.latitude;
-				longitude = recorded.longitude;
-				$.richiedimappavicina.addEventListener('click', requestMap);
-				$.richiedimappavicina.show();
+				if (OS_ANDROID) {
+					$.richiedimappavicina.removeEventListener('click', requestMap);
+					latitude = recorded.latitude;
+					longitude = recorded.longitude;
+					$.richiedimappavicina.addEventListener('click', requestMap);
+					$.richiedimappavicina.show();
+				}
 
 				//carichiamo i prossimi treni dlla stazione
 				loadTreni(recorded.id, $.listatrenistazionevicina, $.actindstazionevicina);
@@ -396,10 +402,6 @@ function normalizzaRitardo(ritardo) {
 
 function loadTreni(codstazione, tabella, actind) {
 	
-	// Luca 13/11/2014
-	// $.richiedimappa.show();
-	// $.richiedimappapref.show();
-	
 	codstazione = codstazione - 6000000;
 
 	//carichiamo la stazione più vicina
@@ -474,8 +476,11 @@ function indietro(e) {
 
 	$.viewelencostazioni.show();
 	$.viewtrenielencostazioni.hide();
-	$.richiedimappa.hide(); // Luca 13/11/2014
 	$.preferiti.hide();
+	
+	// Luca 13/11/2014
+	if (OS_ANDROID)
+		$.richiedimappa.hide();
 
 	$.aggiornaelenco.title = 'Aggiorna elenco';
 	$.aggiornaelenco.removeEventListener('click', indietro);
@@ -518,11 +523,13 @@ $.listastazionielencostazioni.addEventListener('click', function(e) {
 	$.viewtrenielencostazioni.show();
 	
 	// Luca 14/11/2014
-	$.richiedimappa.removeEventListener('click', requestMap);
-	latitude = e.rowData.data.latitude;
-	longitude = e.rowData.data.longitude;
-	$.richiedimappa.addEventListener('click', requestMap);
-	$.richiedimappa.show();
+	if (OS_ANDROID) {
+		$.richiedimappa.removeEventListener('click', requestMap);
+		latitude = e.rowData.data.latitude;
+		longitude = e.rowData.data.longitude;
+		$.richiedimappa.addEventListener('click', requestMap);
+		$.richiedimappa.show();
+	}
 
 	$.preferiti.show();
 	var indx = findPrefStazione(e.rowData.data.id);
@@ -552,11 +559,13 @@ $.listastazionielencostazionipref.addEventListener('click', function(e) {
 	$.viewtrenielencostazionipref.show();
 	
 	// Luca 14/11/2014
-	$.richiedimappapref.removeEventListener('click', requestMap);
-	latitude = e.rowData.data.latitude;
-	longitude = e.rowData.data.longitude;
-	$.richiedimappapref.addEventListener('click', requestMap);
-	$.richiedimappapref.show();
+	if (OS_ANDROID) {
+		$.richiedimappapref.removeEventListener('click', requestMap);
+		latitude = e.rowData.data.latitude;
+		longitude = e.rowData.data.longitude;
+		$.richiedimappapref.addEventListener('click', requestMap);
+		$.richiedimappapref.show();
+	}
 
 	$.preferitipref.show();
 	var indx = findPrefStazione(e.rowData.data.id);
@@ -614,9 +623,30 @@ else
 	$.index.open();
 	
 // Luca 18/11/2014
-var logo_class = {
-	width: ((Ti.Platform.displayCaps.platformWidth - 6) / (4 * Ti.Platform.displayCaps.logicalDensityFactor)) + 'dp'
+var footer_class = {
+	bottom: 0,
+	backgroundColor: '#FFF',
+	layout: 'horizontal',
+	borderColor: '#cd3838',
+	borderWidth: '3dp'
 };
+if (OS_ANDROID) {
+	var logo_class = {
+		width: ((Ti.Platform.displayCaps.platformWidth - 6) / (4 * Ti.Platform.displayCaps.logicalDensityFactor)) + 'dp'
+	};
+	footer_class.height = (90 / Ti.Platform.displayCaps.logicalDensityFactor) +'dp';
+} else if (OS_IOS) {
+	var logo_class = {
+		width: ((Ti.Platform.displayCaps.platformWidth - 6) / 4) + 'dp'
+	};
+	if (Ti.Platform.displayCaps.dpi > 260)
+		footer_class.height = '90dp';
+	else
+		footer_class.height = '175dp';
+}
+$.addClass($.footervicina, 'footer', footer_class);
+$.addClass($.footerstazelenco, 'footer', footer_class);
+$.addClass($.footerpref, 'footer', footer_class);
 $.addClass($.r4s_img, 'logo', logo_class);
 $.addClass($.see_img, 'logo', logo_class);
 $.addClass($.eu_img, 'logo', logo_class);
@@ -629,3 +659,4 @@ $.addClass($.r4s_img_pref, 'logo', logo_class);
 $.addClass($.see_img_pref, 'logo', logo_class);
 $.addClass($.eu_img_pref, 'logo', logo_class);
 $.addClass($.tper_img_pref, 'logo', logo_class);
+ 
