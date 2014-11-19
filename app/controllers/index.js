@@ -631,14 +631,8 @@ var footer_class = {
 	borderWidth: '3dp'
 };
 if (OS_ANDROID) {
-	var logo_class = {
-		width: ((Ti.Platform.displayCaps.platformWidth - 6) / (4 * Ti.Platform.displayCaps.logicalDensityFactor)) + 'dp'
-	};
 	footer_class.height = (90 / Ti.Platform.displayCaps.logicalDensityFactor) +'dp';
 } else if (OS_IOS) {
-	var logo_class = {
-		width: ((Ti.Platform.displayCaps.platformWidth - 6) / 4) + 'dp'
-	};
 	if (Ti.Platform.displayCaps.dpi > 260)
 		footer_class.height = '90dp';
 	else
@@ -647,6 +641,10 @@ if (OS_ANDROID) {
 $.addClass($.footervicina, 'footer', footer_class);
 $.addClass($.footerstazelenco, 'footer', footer_class);
 $.addClass($.footerpref, 'footer', footer_class);
+
+var logo_class = {
+	width: ((Ti.Platform.displayCaps.platformWidth - 6) / (4 * 	(Ti.Platform.displayCaps.logicalDensityFactor || 1))) + 'dp'
+};
 $.addClass($.r4s_img, 'logo', logo_class);
 $.addClass($.see_img, 'logo', logo_class);
 $.addClass($.eu_img, 'logo', logo_class);
