@@ -133,4 +133,11 @@
 	<string name="lbl_ricarica_contratti_error_nocontratto">Selezionare il contratto da ricaricare</string>
 	
 	<string name="lbl_ricarica_pagamentoonline_header">Ricarica abbonamento n. %s</string>
+	
+	<!-- Luca 20/11/2014 -->
+	<string name="msg_prompt_noactivityfound_title">Attenzione</string>
+	<string name="msg_prompt_noactivityfound_desc">Non hai alcuna applicazione con cui poter visualizzare questa posizione!</string>
+	<string name="msg_prompt_generic_error">Attenzione</string>
+	<string name="msg_prompt_generic_error">Si è verificato un errore!</string>
+	<string name="msg_prompt_accept">OK</string>
 </resources>

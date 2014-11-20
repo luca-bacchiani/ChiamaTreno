@@ -25,18 +25,30 @@ function showLocation(e) {
     Ti.Android.currentActivity.startActivity(intent);
 };
 var requestMap = function() {
-	if (!OS_ANDROID)
-		return;
-	if (isNaN(latitude) || isNaN(longitude)) {
-		alert('coordinate non valide');
-		return;
-	};
-	var intent = Titanium.Android.createServiceIntent({
-        action : Ti.Android.ACTION_VIEW,
-        data : 'geo:' + latitude + ',' + longitude
-    });
-    intent.addCategory(Ti.Android.CATEGORY_DEFAULT);
-    Ti.Android.currentActivity.startActivity(intent);
+	try {
+		if (!OS_ANDROID)
+			return;
+		if (isNaN(latitude) || isNaN(longitude)) {
+			alert('coordinate non valide');
+			return;
+		};
+		var intent = Titanium.Android.createServiceIntent({
+	        action : Ti.Android.ACTION_VIEW,
+	        data : 'geo:' + latitude + ',' + longitude
+	    });
+	    intent.addCategory(Ti.Android.CATEGORY_DEFAULT);
+	    Ti.Android.currentActivity.startActivity(intent);
+	} catch (e) {
+		var alert = Titanium.UI.createAlertDialog({
+		    title: L("msg_prompt_noactivityfound_title"),
+		    buttonNames: [ L("msg_prompt_accept") ]
+		});
+		if (e.message.indexOf('No Activity Found to handle intent') == -1)
+			alert.message = L("msg_prompt_noactivityfound_desc");
+		else
+			alert.message = L("msg_prompt_generic_error");
+		alert.show();
+	}
 };
 $.stazionitab.addEventListener('focus', function(e) {
 	if ($.viewelencostazioni.visible)
@@ -622,7 +634,7 @@ if (Ti.Platform.name !== "android")
 else 
 	$.index.open();
 	
-// Luca 18/11/2014
+// Luca 18/11/2014 - footer
 var footer_class = {
 	bottom: 0,
 	backgroundColor: '#FFF',
@@ -642,6 +654,7 @@ $.addClass($.footervicina, 'footer', footer_class);
 $.addClass($.footerstazelenco, 'footer', footer_class);
 $.addClass($.footerpref, 'footer', footer_class);
 
+// Luca 18/11/2014 - loghi move@
 var logo_class = {
 	width: ((Ti.Platform.displayCaps.platformWidth - 6) / (4 * 	(Ti.Platform.displayCaps.logicalDensityFactor || 1))) + 'dp'
 };
